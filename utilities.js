@@ -203,7 +203,16 @@ class Utilities {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 'apple'
             }
+
           }
+        }
+        {
+          // `opcode` is the internal ID of the block
+          // It should never change!
+          // It corresponds to the class method with the same name.
+          opcode: 'lineBreak',
+          blockType: Scratch.BlockType.REPORTER,
+          text: 'Linebreak Character'
         }
       ]
     }
@@ -283,6 +292,10 @@ class Utilities {
     return STRING.toString().replace(new RegExp(REGEX, 'gi'), NEWSTRING);
   }
 
+}
+LineBreak() { 
+ return '
+'
 }
 
 Scratch.extensions.register(new Utilities());
